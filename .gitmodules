@@ -1,0 +1,3 @@
+[submodule "src/static/httpspider"]
+	path = src/static/httpspider
+	url = https://github.com/lorkaan/httpspider.git

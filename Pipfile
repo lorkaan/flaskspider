@@ -5,8 +5,13 @@ name = "pypi"
 
 [packages]
 flask = "*"
+requests = "*"
+beautifulsoup4 = "*"
+lxml = "*"
+nltk = "*"
 
 [dev-packages]
+pipfilemerge = "*"
 
 [requires]
-python_version = "3.9"
+python_version = [ "3.9", "3.8",]

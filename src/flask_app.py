@@ -10,7 +10,7 @@ def hello():
 def search_page():
     return render_template("search.html", action="/results")
 
-@app.route("/results")
+@app.route("/results", methods=["POST"])
 def results_page():
     return "Results will go here"
 
