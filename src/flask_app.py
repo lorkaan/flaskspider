@@ -1,4 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from static.httpspider.api.graph import createGraph as make_graph
+import json
 
 app = Flask(__name__)
 
@@ -12,7 +14,12 @@ def search_page():
 
 @app.route("/results", methods=["POST"])
 def results_page():
-    return "Results will go here"
+    _, obj = make_graph([request.form.get('entry_point', "")], request.form.get('max_depth', 1))
+    try:
+        obj_str = json.dumps(obj)
+    except Exception as e:
+        obj_str = ""
+    return obj_str
 
 if __name__ == '__main__':
     port = 5000
